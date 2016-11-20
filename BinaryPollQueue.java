@@ -1,4 +1,6 @@
-/* Ryan Madden */
+/* Ryan Madden 
+Lab 8 priority poll queue using two stacks as underlying containers.  pretty cool
+*/
 
 
 /* Implements a FIFO-Priority Queue using two LIFO Stacks.
@@ -43,7 +45,7 @@ public class BinaryPollQueue<E extends Comparable<E>> { // Do not change this li
 			}
 			return e;
 	}
-	public E poll()
+	public E elementPoll()
 	{
 			while(!stk1.empty())
 			{
@@ -60,14 +62,14 @@ public class BinaryPollQueue<E extends Comparable<E>> { // Do not change this li
 	
 	public E priorityPoll()
 	{
-		E max;
+		E max = stk1.peek();
 		boolean popped = false;  //this removes double popping of identical objects
 		while(!stk1.empty())
 			{
 				if(stk1.peek().compareTo(max) > 0)
 				{
 					max = stk1.peek();
-				{					
+				}					
 				stk2.push(stk1.pop());
 			}
 			
@@ -79,13 +81,13 @@ public class BinaryPollQueue<E extends Comparable<E>> { // Do not change this li
 					popped =  true;
 				}
 				else
-					stk1.push(stk2.pop());					
+					stk1.push(stk2.pop());
 			}
-			
+			return max;	
 	}
-	}
-	return max;	
-	}
+	
+	
+	
     
 }
 
