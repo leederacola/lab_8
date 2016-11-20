@@ -85,10 +85,17 @@ public class BinaryPollQueue<E extends Comparable<E>> { // Do not change this li
 			}
 			return max;	
 	}
-	
-	
-	
-    
+	  
 }
+/**
+Front Element  <c,2> 
+Removed Highest Priority <e,5> 
+Front Element  <c,2> 
+Removed Front <c,2> 
 
+Front Element  <d,3> 
+Removed Front <d,3> 
+Removed Highest Priority <h,7> 
+
+*/
 
